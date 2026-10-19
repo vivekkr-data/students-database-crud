@@ -1,5 +1,9 @@
 # Render deployment
 
+Live demo: https://students-database-crud.onrender.com/docs
+
+Current deployment: free plan, Singapore, ephemeral SQLite storage, Ollama disabled. The free service has no persistent disk.
+
 ## Service settings
 
 | Setting | Value |
@@ -8,11 +12,12 @@
 | Branch | main |
 | Service type | Web Service |
 | Runtime | Python 3 |
-| Root directory | students-database-crud |
-| Build command | python -m pip install -r requirements-lock.txt |
-| Start command | python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT |
-| Health check | /health |
+| Root directory | Repository root (blank setting) |
+| Build command | python -m pip install -r students-database-crud/requirements-lock.txt |
+| Start command | python -m uvicorn app.main:app --app-dir students-database-crud --host 0.0.0.0 --port $PORT |
+| Platform health check | Default TCP check; /health is also available for manual verification |
 | ENABLE_OLLAMA | false |
+| PYTHON_VERSION | 3.12.11 |
 
 The application directory includes `.python-version` selecting Python 3.12. Use one service instance with one Uvicorn worker for the SQLite deployment.
 
@@ -40,10 +45,10 @@ Free Render web services do not support persistent disks. For a temporary demo, 
 To load fictional records from your local project environment after deployment:
 
 ```text
-python -m scripts.seed --url https://YOUR-ACTUAL-SERVICE.onrender.com
+python -m scripts.seed --url https://students-database-crud.onrender.com
 ```
 
-The URL above is a placeholder, not a claimed live deployment.
+Run the sample loader from the inner project directory with its dependencies installed.
 
 This public demonstration has no authentication. Use fictional data only. Ollama is disabled on the hosted service; core CRUD and the built-in database question responses work without a model.
 
