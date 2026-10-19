@@ -1,5 +1,9 @@
 # Students Database CRUD Application
 
+**[Live API demo / Swagger UI](https://students-database-crud.onrender.com/docs)** · [Health check](https://students-database-crud.onrender.com/health)
+
+Hosted on Render's free plan. The service may take time to wake up after inactivity. SQLite data on this demo is temporary and may reset after a restart or deployment; use fictional data only. Ollama is disabled on the hosted demo.
+
 A Python backend internship project for managing student records with **FastAPI** and **SQLite**. Includes validated CRUD endpoints, search/filtering, pagination, persistent storage, automated tests and an optional local Ollama extension.
 
 ## 1. Start here (Windows)
