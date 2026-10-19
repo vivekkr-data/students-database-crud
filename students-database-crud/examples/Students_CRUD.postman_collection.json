@@ -1,0 +1,149 @@
+{
+  "info": {
+    "name": "Students Database CRUD",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "student_id",
+      "value": "1"
+    }
+  ],
+  "item": [
+    {
+      "name": "Create student",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/students",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Aarav Demo\",\n  \"date_of_birth\": \"2004-02-15\",\n  \"email\": \"student01@example.com\",\n  \"course\": \"ECE\",\n  \"enrollment_date\": \"2025-07-15\",\n  \"address\": \"Fictional Campus, Demo City\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (pm.response.code === 201) { pm.collectionVariables.set(\"student_id\", pm.response.json().student_id); }"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "List students",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/students",
+        "header": []
+      }
+    },
+    {
+      "name": "Filter students",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/students?course=CSE&limit=20&offset=0",
+        "header": []
+      }
+    },
+    {
+      "name": "View student",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/students/{{student_id}}",
+        "header": []
+      }
+    },
+    {
+      "name": "Replace student",
+      "request": {
+        "method": "PUT",
+        "url": "{{base_url}}/students/{{student_id}}",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Aarav Demo\",\n  \"date_of_birth\": \"2004-02-15\",\n  \"email\": \"student01@example.com\",\n  \"course\": \"ECE\",\n  \"enrollment_date\": \"2025-07-15\",\n  \"address\": \"Fictional Campus, Demo City\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Update course",
+      "request": {
+        "method": "PATCH",
+        "url": "{{base_url}}/students/{{student_id}}",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"course\": \"Data Science\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Ask question",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/ai/ask",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"How many students are there?\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Delete student",
+      "request": {
+        "method": "DELETE",
+        "url": "{{base_url}}/students/{{student_id}}",
+        "header": []
+      }
+    }
+  ]
+}

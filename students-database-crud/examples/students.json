@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Aarav Demo",
+    "date_of_birth": "2004-02-15",
+    "email": "student01@example.com",
+    "course": "ECE",
+    "enrollment_date": "2025-07-15",
+    "address": "Fictional Campus, Demo City"
+  },
+  {
+    "name": "Ananya Demo",
+    "date_of_birth": "2005-03-15",
+    "email": "student02@example.com",
+    "course": "Data Science",
+    "enrollment_date": "2025-07-15",
+    "address": "Fictional Campus, Demo City"
+  },
+  {
+    "name": "Kabir Demo",
+    "date_of_birth": "2006-04-15",
+    "email": "student03@example.com",
+    "course": "CSE",
+    "enrollment_date": "2025-07-15",
+    "address": "Fictional Campus, Demo City"
+  },
+  {
+    "name": "Meera Demo",
+    "date_of_birth": "2007-05-15",
+    "email": "student04@example.com",
+    "course": "ECE",
+    "enrollment_date": "2025-07-15",
+    "address": "Fictional Campus, Demo City"
+  },
+  {
+    "name": "Rohan Demo",
+    "date_of_birth": "2003-06-15",
+    "email": "student05@example.com",
+    "course": "Data Science",
+    "enrollment_date": "2025-07-15",
+    "address": "Fictional Campus, Demo City"
+  },
+  {
+    "name": "Sara Demo",
+    "date_of_birth": "2004-07-15",
+    "email": "student06@example.com",
+    "course": "CSE",
+    "enrollment_date": "2025-07-15",
+    "address": "Fictional Campus, Demo City"
+  },
+  {
+    "name": "Dev Demo",
+    "date_of_birth": "2005-08-15",
+    "email": "student07@example.com",
+    "course": "ECE",
+    "enrollment_date": "2025-07-15",
+    "address": "Fictional Campus, Demo City"
+  },
+  {
+    "name": "Tara Demo",
+    "date_of_birth": "2006-01-15",
+    "email": "student08@example.com",
+    "course": "Data Science",
+    "enrollment_date": "2025-07-15",
+    "address": "Fictional Campus, Demo City"
+  },
+  {
+    "name": "Arjun Demo",
+    "date_of_birth": "2007-02-15",
+    "email": "student09@example.com",
+    "course": "CSE",
+    "enrollment_date": "2025-07-15",
+    "address": "Fictional Campus, Demo City"
+  },
+  {
+    "name": "Nisha Demo",
+    "date_of_birth": "2003-03-15",
+    "email": "student10@example.com",
+    "course": "ECE",
+    "enrollment_date": "2025-07-15",
+    "address": "Fictional Campus, Demo City"
+  }
+]

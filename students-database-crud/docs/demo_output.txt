@@ -1,0 +1,103 @@
+
+POST /students
+Request: {"name": "Demo Student", "date_of_birth": "2006-02-10", "email": "demo@example.com", "course": "CSE"}
+Status: 201
+{
+  "name": "Demo Student",
+  "date_of_birth": "2006-02-10",
+  "email": "demo@example.com",
+  "phone": null,
+  "course": "CSE",
+  "address": null,
+  "enrollment_date": null,
+  "student_id": 1
+}
+
+GET /students
+Status: 200
+{
+  "total": 1,
+  "limit": 20,
+  "offset": 0,
+  "items": [
+    {
+      "name": "Demo Student",
+      "date_of_birth": "2006-02-10",
+      "email": "demo@example.com",
+      "phone": null,
+      "course": "CSE",
+      "address": null,
+      "enrollment_date": null,
+      "student_id": 1
+    }
+  ]
+}
+
+GET /students/1
+Status: 200
+{
+  "name": "Demo Student",
+  "date_of_birth": "2006-02-10",
+  "email": "demo@example.com",
+  "phone": null,
+  "course": "CSE",
+  "address": null,
+  "enrollment_date": null,
+  "student_id": 1
+}
+
+PATCH /students/1
+Request: {"course": "Data Science"}
+Status: 200
+{
+  "name": "Demo Student",
+  "date_of_birth": "2006-02-10",
+  "email": "demo@example.com",
+  "phone": null,
+  "course": "Data Science",
+  "address": null,
+  "enrollment_date": null,
+  "student_id": 1
+}
+
+GET /students?course=Data%20Science
+Status: 200
+{
+  "total": 1,
+  "limit": 20,
+  "offset": 0,
+  "items": [
+    {
+      "name": "Demo Student",
+      "date_of_birth": "2006-02-10",
+      "email": "demo@example.com",
+      "phone": null,
+      "course": "Data Science",
+      "address": null,
+      "enrollment_date": null,
+      "student_id": 1
+    }
+  ]
+}
+
+POST /ai/ask
+Request: {"question": "How many students are there?"}
+Status: 200
+{
+  "answer": "There are 1 students in the database.",
+  "total": 1,
+  "records": [],
+  "truncated": false,
+  "source": "sqlite",
+  "ollama_explanation": null
+}
+
+DELETE /students/1
+Status: 204
+(empty response)
+
+GET /students/1
+Status: 404
+{
+  "detail": "Student not found"
+}

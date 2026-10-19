@@ -1,0 +1,30 @@
+[
+  {
+    "step": "seed run 1",
+    "output": "Created 10; skipped 0 existing emails. No records deleted."
+  },
+  {
+    "step": "seed run 2",
+    "output": "Created 0; skipped 10 existing emails. No records deleted."
+  },
+  {
+    "step": "live HTTP list",
+    "status": 200,
+    "total": 10
+  },
+  {
+    "step": "OS process restart persistence",
+    "result": "PASS",
+    "total_after_restart": 10
+  },
+  {
+    "step": "live HTTP create / patch / delete / missing record",
+    "statuses": [
+      201,
+      200,
+      204,
+      404
+    ],
+    "result": "PASS"
+  }
+]
